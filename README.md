@@ -10,7 +10,7 @@
 
 ## Techno
 
- - google ads
+ - google AdSense
  - jquerry
  - ajax
  - html:5
