@@ -1,0 +1,27 @@
+#formulaire {
+    padding : 20%;
+    display : flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#inputEmail {
+    margin : 5px;
+}
+
+.label_login2 {
+    margin-top : 5%;
+}
+
+.label_login1 {
+    margin-top : 1%;
+}
+
+#inputPassword {
+    margin-bottom : 2%;
+}
+
+#btn_login {
+    width: 30%;
+    margin-top: 1%;
+}
