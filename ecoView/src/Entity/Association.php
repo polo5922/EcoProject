@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\AssociationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AssociationRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=AssociationRepository::class)
@@ -45,18 +46,44 @@ class Association
     private $ass_cp;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $ass_ville;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, inversedBy="associations")
      */
-    private $ass_members;
+    private $ass_membres;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $ass_site;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $ass_created_at;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $ass_added_at;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $ass_logo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="associationsGerees")
+     */
+    private $ass_president;
 
     public function __construct()
     {
         $this->ass_members = new ArrayCollection();
+        $this->ass_added_at = new DateTime();
     }
 
     public function getId(): ?int
@@ -158,6 +185,66 @@ class Association
         if ($this->ass_members->contains($assMember)) {
             $this->ass_members->removeElement($assMember);
         }
+
+        return $this;
+    }
+
+    public function getAssSite(): ?string
+    {
+        return $this->ass_site;
+    }
+
+    public function setAssSite(?string $ass_site): self
+    {
+        $this->ass_site = $ass_site;
+
+        return $this;
+    }
+
+    public function getAssCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->ass_created_at;
+    }
+
+    public function setAssCreatedAt(?\DateTimeInterface $ass_created_at): self
+    {
+        $this->ass_created_at = $ass_created_at;
+
+        return $this;
+    }
+
+    public function getAssAddedAt(): ?\DateTimeInterface
+    {
+        return $this->ass_added_at;
+    }
+
+    public function setAssAddedAt(\DateTimeInterface $ass_added_at): self
+    {
+        $this->ass_added_at = $ass_added_at;
+
+        return $this;
+    }
+
+    public function getAssLogo(): ?string
+    {
+        return $this->ass_logo;
+    }
+
+    public function setAssLogo(?string $ass_logo): self
+    {
+        $this->ass_logo = $ass_logo;
+
+        return $this;
+    }
+
+    public function getAssPresident(): ?User
+    {
+        return $this->ass_president;
+    }
+
+    public function setAssPresident(?User $ass_president): self
+    {
+        $this->ass_president = $ass_president;
 
         return $this;
     }

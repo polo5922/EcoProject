@@ -52,31 +52,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                        {% set i = 1 %}
+                        {% for user in users %}
                             <tr>
-                                <td>1</td>
-                                <td>Jean</td>
-                                <td>5284</td>
+                                <td>{{ i }}</td>
+                                <td>{{ user.userName }}</td>
+                                <td>{{ user.userClics }}</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>test</td>
-                                <td>4982</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>jack</td>
-                                <td>3749</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>jack</td>
-                                <td>3749</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>jack</td>
-                                <td>3749</td>
-                            </tr>
+                        {% set i = i + 1 %}
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>

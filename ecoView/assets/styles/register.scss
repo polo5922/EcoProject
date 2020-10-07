@@ -1,0 +1,14 @@
+#formulaire {
+    padding : 15% 25%;
+    display : flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.btn {
+    color : white;
+}
+
+.btn:hover {
+    color : yellow;
+}

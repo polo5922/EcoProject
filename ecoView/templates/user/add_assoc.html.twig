@@ -2,8 +2,32 @@
 
 {% block title "Ajouter une association" %}
 
+{% block styles %}
+    {{ encore_entry_link_tags('add_assoc') }}
+{% endblock %}
+
 {% block body %}
+<div class="container-fluid row">
+    {% set i = 0 %}
     {% for association in associations %}
-        {{association.ass_nom}}
+    <div class="row m-3 col-4">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-dark active">
+                <input type="checkbox" name="assoc_{{i}}" id="assoc_{{i}}" autocomplete="off">
+            </label>
+        </div>
+        <div class="media bg-dark w-75">
+            <a class="d-flex" href="#">
+                <img src="{{ asset('img/logo/' ~ association.assLogo) }}" alt="" class="ass_logo">
+            </a>
+            <div class="media-body">
+                <h5>{{ association.assNom }}</h5>
+                {{ association.assDescription }}
+            </div>
+        </div> 
+    </div>   
+    {% set i = i+1 %}
     {% endfor %}
+</div>
+    
 {% endblock %}

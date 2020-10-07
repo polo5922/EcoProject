@@ -6,10 +6,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"user_id"}, message="There is already an account with this user_id")
  */
 class User implements UserInterface
 {
@@ -60,9 +62,25 @@ class User implements UserInterface
      */
     private $associations;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Association::class, mappedBy="ass_president")
+     */
+    private $associationsGerees;
+
     public function __construct()
     {
         $this->associations = new ArrayCollection();
+        $this->associationsGerees = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->user_name;
     }
 
     public function getId(): ?int
@@ -203,6 +221,49 @@ class User implements UserInterface
     public function setRole(?string $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Association[]
+     */
+    public function getAssociationsGerees(): Collection
+    {
+        return $this->associationsGerees;
+    }
+
+    public function addAssociationsGeree(Association $associationsGeree): self
+    {
+        if (!$this->associationsGerees->contains($associationsGeree)) {
+            $this->associationsGerees[] = $associationsGeree;
+            $associationsGeree->setAssPresident($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAssociationsGeree(Association $associationsGeree): self
+    {
+        if ($this->associationsGerees->contains($associationsGeree)) {
+            $this->associationsGerees->removeElement($associationsGeree);
+            // set the owning side to null (unless already changed)
+            if ($associationsGeree->getAssPresident() === $this) {
+                $associationsGeree->setAssPresident(null);
+            }
+        }
 
         return $this;
     }

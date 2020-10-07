@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\User;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -35,6 +36,17 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllOrderByClics()
+    {
+        $qb = $this->createQueryBuilder('u')
+        ->orderBy('u.user_clics', 'DESC');
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+
+    }
 
     /*
     public function findOneBySomeField($value): ?User

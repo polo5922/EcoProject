@@ -54,6 +54,8 @@ class UserController extends AbstractController
         ]);
     }
 
+
+
     /**
      * @Route("/add_assoc", name="user_add_assoc")
      */
@@ -80,9 +82,9 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
      */
-    public function show(UserRepository $userRepo, $user_id): Response
+    public function show(UserRepository $userRepo, $id): Response
     {
-        $user = $userRepo->findOneBy(['id'=>$user_id]);
+        $user = $userRepo->findOneBy(['id'=>$id]);
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
