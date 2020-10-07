@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block title "Ajouter une association" %}
+
+{% block body %}
+    {% for association in associations %}
+        {{association.ass_nom}}
+    {% endfor %}
+{% endblock %}

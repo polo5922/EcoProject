@@ -6,6 +6,7 @@ use DateTime;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Repository\AssociationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,17 +55,41 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{user_id}", name="user_show", methods={"GET"})
+     * @Route("/add_assoc", name="user_add_assoc")
      */
-    public function show(User $user): Response
+    public function add_assoc(Request $request, AssociationRepository $assoc_repo)
     {
+        $user = $this->getUser();
+        $associations = $assoc_repo->findAll();
+        // dd($request);
+
+        // $form->handleRequest($request);
+        // if ($form->isSubmitted() && $form->isValid()) {
+        // dd($form);
+        //     $user_associations = [];
+        //     foreach($form as $f){
+
+        //     }
+        //     $this->getDoctrine()->getManager()->flush();
+
+        //     return $this->redirectToRoute('user_index');
+        // }
+        return $this->render('user/add_assoc.html.twig',compact('associations','user'));
+    }
+
+    /**
+     * @Route("/{id}", name="user_show", methods={"GET"})
+     */
+    public function show(UserRepository $userRepo, $user_id): Response
+    {
+        $user = $userRepo->findOneBy(['id'=>$user_id]);
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
     }
 
     /**
-     * @Route("/{user_id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, User $user): Response
     {
@@ -84,7 +109,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{user_id}", name="user_delete", methods={"DELETE"})
+     * @Route("/{id}", name="user_delete", methods={"DELETE"})
      */
     public function delete(Request $request, User $user): Response
     {
