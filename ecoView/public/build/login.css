@@ -1,0 +1,30 @@
+#formulaire {
+  padding: 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#inputEmail {
+  margin: 5px;
+}
+
+.label_login2 {
+  margin-top: 5%;
+}
+
+.label_login1 {
+  margin-top: 1%;
+}
+
+#inputPassword {
+  margin-bottom: 2%;
+}
+
+#btn_login {
+  width: 30%;
+  margin-top: 1%;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vbG9naW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQWE7RUFDYixhQUFjO0VBQ2QsOEJBQThCO0VBQzlCLHNCQUFzQjtBQUMxQjs7QUFFQTtFQUNJLFdBQVk7QUFDaEI7O0FBRUE7RUFDSSxjQUFlO0FBQ25COztBQUVBO0VBQ0ksY0FBZTtBQUNuQjs7QUFFQTtFQUNJLGlCQUFrQjtBQUN0Qjs7QUFFQTtFQUNJLFVBQVU7RUFDVixjQUFjO0FBQ2xCIiwiZmlsZSI6ImxvZ2luLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNmb3JtdWxhaXJlIHtcclxuICAgIHBhZGRpbmcgOiAyMCU7XHJcbiAgICBkaXNwbGF5IDogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbn1cclxuXHJcbiNpbnB1dEVtYWlsIHtcclxuICAgIG1hcmdpbiA6IDVweDtcclxufVxyXG5cclxuLmxhYmVsX2xvZ2luMiB7XHJcbiAgICBtYXJnaW4tdG9wIDogNSU7XHJcbn1cclxuXHJcbi5sYWJlbF9sb2dpbjEge1xyXG4gICAgbWFyZ2luLXRvcCA6IDElO1xyXG59XHJcblxyXG4jaW5wdXRQYXNzd29yZCB7XHJcbiAgICBtYXJnaW4tYm90dG9tIDogMiU7XHJcbn1cclxuXHJcbiNidG5fbG9naW4ge1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIG1hcmdpbi10b3A6IDElO1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ==*/

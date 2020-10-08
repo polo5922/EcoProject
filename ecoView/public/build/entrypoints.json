@@ -1,0 +1,50 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~app~home.js",
+        "/build/vendors~app.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    },
+    "home": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~app~home.js",
+        "/build/vendors~home.js",
+        "/build/home.js"
+      ]
+    },
+    "login": {
+      "js": [
+        "/build/runtime.js",
+        "/build/login.js"
+      ],
+      "css": [
+        "/build/login.css"
+      ]
+    },
+    "add_assoc": {
+      "js": [
+        "/build/runtime.js",
+        "/build/add_assoc.js"
+      ],
+      "css": [
+        "/build/add_assoc.css"
+      ]
+    },
+    "register": {
+      "js": [
+        "/build/runtime.js",
+        "/build/register.js"
+      ],
+      "css": [
+        "/build/register.css"
+      ]
+    }
+  }
+}

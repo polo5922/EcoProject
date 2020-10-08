@@ -1,9 +1,6 @@
 
-const pseudos = [
-    'jean',
-    'test',
-    'jack'
-]
+const pseudos = $('.js-user-list').data('userList');
+console.log(pseudos);
 console.log("ready");
 $("#pseudo").on('focusout',function(){
     if($(this).val() > "")

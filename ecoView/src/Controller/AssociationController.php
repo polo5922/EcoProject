@@ -57,6 +57,11 @@ class AssociationController extends AbstractController
 
             }
 
+            $ass_president = $form->get('ass_president');
+            if (!$ass_president){
+                $association->setAssPresident($this->getUser());
+            }
+
             $association->setAssAddedAt(new DateTime());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($association);

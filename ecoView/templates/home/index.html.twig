@@ -9,7 +9,7 @@
     <div class="container">
         <p class=" py-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae fugit, aliquam nostrum tenetur iste sunt sapiente. Soluta quidem cumque porro, vel blanditiis, sit eum magnam et, similique aut quia officiis.</p>
         <form class="d-flex align-items-center flex-col py-3 flex-column">
-            <input class="form-control w-25" type="text" name="" id="pseudo" placeholder="name" value="">
+            <input class="form-control w-25" type="text" name="" id="pseudo" placeholder="name" value="{{ app.user ? app.user : '' }}">
         </form>
 
     </div>
@@ -67,8 +67,9 @@
             </div>
         </aside>
     </div>
+    <div class="js-user-list" data-user-list="{{ users_names |json_encode|e('html_attr') }}">
+    </div>
 {% endblock %}
-
 {% block javascripts %}
 {{ encore_entry_script_tags('home') }}
 {% endblock %}

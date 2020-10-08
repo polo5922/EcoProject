@@ -2,18 +2,19 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\User;
-use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
+use App\Form\RegistrationFormType;
 use App\Security\UserAuthenticator;
+use Symfony\Component\Mime\Address;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
 class RegistrationController extends AbstractController
@@ -28,20 +29,27 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, UserAuthenticator $authenticator): Response
+    public function register(Request $request, GuardAuthenticatorHandler $guardHandler, UserAuthenticator $authenticator): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+            // dd($request->query->get('registration_form'), $form);
+        $response = $request->query->get('registration_form');
+        if ($response) {
             // encode the plain password
-            $user->setUser_password(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
+            $user->setUserPassword(
+                password_hash($response['plainPassword'], PASSWORD_DEFAULT)
             );
+            $user->setUserName($response['user_name']);
+            $user->setUserEmail($response['user_email']);
+            $user->setUserCreatedAt(new DateTime());
+            $user->setUserClics(0);
+            $ip = $_SERVER['REMOTE_ADDR'];
+            if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER)) {
+                $ip = array_pop(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']));
+            }
+            $user->setUserIp($ip);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

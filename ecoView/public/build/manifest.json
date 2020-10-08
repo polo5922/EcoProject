@@ -1,0 +1,15 @@
+{
+  "build/add_assoc.css": "/build/add_assoc.css",
+  "build/add_assoc.js": "/build/add_assoc.js",
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/home.js": "/build/home.js",
+  "build/login.css": "/build/login.css",
+  "build/login.js": "/build/login.js",
+  "build/register.css": "/build/register.css",
+  "build/register.js": "/build/register.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors~app.js": "/build/vendors~app.js",
+  "build/vendors~app~home.js": "/build/vendors~app~home.js",
+  "build/vendors~home.js": "/build/vendors~home.js"
+}

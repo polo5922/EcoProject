@@ -14,7 +14,8 @@ class HomeController extends AbstractController
     public function index(UserRepository $repo)
     {
         $users = $repo->findAllOrderByClics();
+        $users_names = $repo->findAllNames();
         // dd($users);
-        return $this->render('home/index.html.twig', compact('users'));
+        return $this->render('home/index.html.twig', compact('users', 'users_names'));
     }
 }

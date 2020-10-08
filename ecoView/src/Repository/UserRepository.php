@@ -40,12 +40,28 @@ class UserRepository extends ServiceEntityRepository
     public function findAllOrderByClics()
     {
         $qb = $this->createQueryBuilder('u')
-        ->orderBy('u.user_clics', 'DESC');
+        ->orderBy('u.user_clics', 'DESC')
+        ->orderBy('u.user_name', 'DESC')
+        ->setMaxResults(10);
 
         $query = $qb->getQuery();
 
         return $query->execute();
 
+    }
+
+    public function findAllNames(){
+        $qb = $this->createQueryBuilder('u')
+        ->select('u.user_name');
+
+        $query = $qb->getQuery();
+        $usernames =  $query->execute();
+        $users_names = [];
+
+        foreach($usernames as $username){
+            $users_names[] = $username['user_name'];
+        }
+        return $users_names;
     }
 
     /*

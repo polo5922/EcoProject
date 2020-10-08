@@ -76,9 +76,14 @@ class UserAuthenticator extends AbstractFormLoginAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+        // dd($credentials, $user);
         // Check the user's password or other credentials and return true or false
         // If there are no credentials to check, you can just return true
-        return true;
+        if (password_verify($credentials['password'], $user->getUserPassword())){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)

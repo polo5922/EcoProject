@@ -3,40 +3,53 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="associations-tab" data-toggle="tab" href="#associations" role="tab" aria-controls="associations" aria-selected="false">Associations</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <table class="table">
-        <tbody>
-            <tr>
-                <th>userId</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>User_name</th>
-                <td>{{ user.userName }}</td>
-            </tr>
-            <tr>
-                <th>User_password</th>
-                <td>{{ user.userPassword }}</td>
-            </tr>
-            <tr>
-                <th>User_email</th>
-                <td>{{ user.userEmail }}</td>
-            </tr>
-            <tr>
-                <th>User_ip</th>
-                <td>{{ user.userIp }}</td>
-            </tr>
-            <tr>
-                <th>User_created_at</th>
-                <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>User_clics</th>
-                <td>{{ user.userClics }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <tbody>
+                <tr>
+                    <th>User_name</th>
+                    <td>{{ user.userName }}</td>
+                </tr>
+                <tr>
+                    <th>User_password</th>
+                    <td>{{ user.userPassword }}</td>
+                </tr>
+                <tr>
+                    <th>User_email</th>
+                    <td>{{ user.userEmail }}</td>
+                </tr>
+                <tr>
+                    <th>User_ip</th>
+                    <td>{{ user.userIp }}</td>
+                </tr>
+                <tr>
+                    <th>User_created_at</th>
+                    <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>User_clics</th>
+                    <td>{{ user.userClics }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  <div class="tab-pane fade" id="associations" role="tabpanel" aria-labelledby="associations-tab">
+    {% for association in user.associations %}
+      {{accossiation.AssNom}}
+    {% endfor %}
+    <a class="btn btn-outline-primary" href="{{ path('user_add_assoc') }}">ajouter</a>
+  </div>
+</div>
+    <h1>User</h1>
 
     <a href="{{ path('user_index') }}">back to list</a>
 
