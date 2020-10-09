@@ -86,21 +86,22 @@ class __TwigTemplate_3dc2b6642453a74044bea56ce71be8ba5c24590b4a3b0e97463dd3d0847
 
         // line 6
         echo "    <h1>Edit Association</h1>
-
-    ";
+    <div class=\"container\">
+        ";
         // line 8
         echo twig_include($this->env, $context, "association/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
-    <a href=\"";
+        <a href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("association_index");
         echo "\">back to list</a>
 
-    ";
+        ";
         // line 12
         echo twig_include($this->env, $context, "association/_delete_form.html.twig");
         echo "
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -133,13 +134,14 @@ class __TwigTemplate_3dc2b6642453a74044bea56ce71be8ba5c24590b4a3b0e97463dd3d0847
 
 {% block body %}
     <h1>Edit Association</h1>
+    <div class=\"container\">
+        {{ include('association/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('association/_form.html.twig', {'button_label': 'Update'}) }}
+        <a href=\"{{ path('association_index') }}\">back to list</a>
 
-    <a href=\"{{ path('association_index') }}\">back to list</a>
-
-    {{ include('association/_delete_form.html.twig') }}
+        {{ include('association/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
-", "association/edit.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\association\\edit.html.twig");
+", "association/edit.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\association\\edit.html.twig");
     }
 }

@@ -168,6 +168,6 @@ class __TwigTemplate_ee1d26da7cfeb818f1b2b6cd101ae998e1e330d91e323da2216e6258b9e
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\ajax.html.twig");
     }
 }

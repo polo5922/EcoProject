@@ -90,61 +90,51 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
     <table class=\"table\">
         <thead>
             <tr>
-                <th>userId</th>
-                <th>User_name</th>
-                <th>User_password</th>
-                <th>User_email</th>
-                <th>User_ip</th>
-                <th>User_created_at</th>
-                <th>User_clics</th>
+                <th>User's name</th>
+                <th>User's email</th>
+                <th>User's ip</th>
+                <th>User created at</th>
+                <th>User nb of clics</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 22
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 23
+            // line 21
             echo "            <tr>
                 <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userName", [], "any", false, false, false, 22), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userEmail", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+                <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userIp", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userName", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userCreatedAt", [], "any", false, false, false, 25), "Y-m-d H:i:s"), "html", null, true);
             echo "</td>
                 <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userPassword", [], "any", false, false, false, 26), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userEmail", [], "any", false, false, false, 27), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userIp", [], "any", false, false, false, 28), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 29
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "userCreatedAt", [], "any", false, false, false, 29)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userCreatedAt", [], "any", false, false, false, 29), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userClics", [], "any", false, false, false, 30), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userClics", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -152,7 +142,7 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 37
+            // line 33
             echo "            <tr>
                 <td colspan=\"8\">no records found</td>
             </tr>
@@ -161,12 +151,12 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 37
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 44
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new");
         echo "\">Create new</a>
 ";
@@ -190,7 +180,7 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
 
     public function getDebugInfo()
     {
-        return array (  170 => 44,  165 => 41,  156 => 37,  147 => 33,  143 => 32,  138 => 30,  134 => 29,  130 => 28,  126 => 27,  122 => 26,  118 => 25,  114 => 24,  111 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 40,  155 => 37,  146 => 33,  137 => 29,  133 => 28,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -205,25 +195,21 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
     <table class=\"table\">
         <thead>
             <tr>
-                <th>userId</th>
-                <th>User_name</th>
-                <th>User_password</th>
-                <th>User_email</th>
-                <th>User_ip</th>
-                <th>User_created_at</th>
-                <th>User_clics</th>
+                <th>User's name</th>
+                <th>User's email</th>
+                <th>User's ip</th>
+                <th>User created at</th>
+                <th>User nb of clics</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
                 <td>{{ user.userName }}</td>
-                <td>{{ user.userPassword }}</td>
                 <td>{{ user.userEmail }}</td>
                 <td>{{ user.userIp }}</td>
-                <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.userCreatedAt | date('Y-m-d H:i:s') }}</td>
                 <td>{{ user.userClics }}</td>
                 <td>
                     <a href=\"{{ path('user_show', {'id': user.id}) }}\">show</a>
@@ -240,6 +226,6 @@ class __TwigTemplate_d5a41475ef1bec46b8b454efa8a8999ae771b2a055dea31d08fa15fa927
 
     <a href=\"{{ path('user_new') }}\">Create new</a>
 {% endblock %}
-", "user/index.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\user\\index.html.twig");
+", "user/index.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\user\\index.html.twig");
     }
 }

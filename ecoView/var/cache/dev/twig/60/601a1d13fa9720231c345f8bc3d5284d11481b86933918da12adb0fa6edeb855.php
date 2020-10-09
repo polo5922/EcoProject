@@ -118,59 +118,61 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
             </div>
         </aside>
 
-        <div class=\"video_section d-flex justify-content-center align-items-center col-8\">
+        <div class=\"video_section d-flex flex-wrap justify-content-center align-items-center col-8\">
             <div id=\"video_add\">
-                <img src=\"https://www.novup.fr/wp-content/uploads/2016/10/play-button.png\" alt=\"\" srcset=\"\" width=\"50px\">
+                ";
+        // line 46
+        echo "                <img src=\"https://www.novup.fr/wp-content/uploads/2016/10/play-button.png\" alt=\"\" srcset=\"\" width=\"50px\">
             </div>
         </div>
         <aside class=\"col-2\">
             <div class=\"card bg-transparent\">
                 <div class=\"card-header\">
-                    Classement
+                    Ranking
                 </div>
                 <div class=\"card-body\">
                     <table class=\"table\">
                         <thead class=\"thead\">
                             <tr>
-                                <th>Place</th>
-                                <th>Nom</th>
-                                <th>CLics</th>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>CLicks</th>
                             </tr>
                         </thead>
                         <tbody>
                         ";
-        // line 55
+        // line 64
         $context["i"] = 1;
-        // line 56
+        // line 65
         echo "                        ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 56, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 65, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 57
+            // line 66
             echo "                            <tr>
                                 <td>";
-            // line 58
-            echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 58, $this->source); })()), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 67, $this->source); })()), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 59
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userName", [], "any", false, false, false, 59), "html", null, true);
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userName", [], "any", false, false, false, 68), "html", null, true);
             echo "</td>
                                 <td>";
-            // line 60
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userClics", [], "any", false, false, false, 60), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "userClics", [], "any", false, false, false, 69), "html", null, true);
             echo "</td>
                             </tr>
                         ";
-            // line 62
-            $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 62, $this->source); })()) + 1);
-            // line 63
+            // line 71
+            $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 71, $this->source); })()) + 1);
+            // line 72
             echo "                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 73
         echo "                        </tbody>
                     </table>
                 </div>
@@ -178,8 +180,8 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
         </aside>
     </div>
     <div class=\"js-user-list\" data-user-list=\"";
-        // line 70
-        echo twig_escape_filter($this->env, json_encode((isset($context["users_names"]) || array_key_exists("users_names", $context) ? $context["users_names"] : (function () { throw new RuntimeError('Variable "users_names" does not exist.', 70, $this->source); })())), "html_attr");
+        // line 79
+        echo twig_escape_filter($this->env, json_encode((isset($context["users_names"]) || array_key_exists("users_names", $context) ? $context["users_names"] : (function () { throw new RuntimeError('Variable "users_names" does not exist.', 79, $this->source); })())), "html_attr");
         echo "\">
     </div>
 ";
@@ -191,7 +193,7 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
 
     }
 
-    // line 73
+    // line 82
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +203,7 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 74
+        // line 83
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("home");
         echo "
 ";
@@ -225,7 +227,7 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
 
     public function getDebugInfo()
     {
-        return array (  205 => 74,  195 => 73,  182 => 70,  174 => 64,  168 => 63,  166 => 62,  161 => 60,  157 => 59,  153 => 58,  150 => 57,  145 => 56,  143 => 55,  97 => 12,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
+        return array (  207 => 83,  197 => 82,  184 => 79,  176 => 73,  170 => 72,  168 => 71,  163 => 69,  159 => 68,  155 => 67,  152 => 66,  147 => 65,  145 => 64,  125 => 46,  97 => 12,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -264,23 +266,32 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
             </div>
         </aside>
 
-        <div class=\"video_section d-flex justify-content-center align-items-center col-8\">
+        <div class=\"video_section d-flex flex-wrap justify-content-center align-items-center col-8\">
             <div id=\"video_add\">
+                {# <script data-ad-client=\"ca-pub-4615348470000537\" async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>
+                    <!-- XYZ 336 x 280 -->
+                    <ins class=\"adsbygoogle\"
+                    style=\"display:inline-block;width:336px;height:280px\"
+                    data-ad-client=\"ca-pub-4615348470000537\"
+                    data-adtest=\"on\"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> #}
                 <img src=\"https://www.novup.fr/wp-content/uploads/2016/10/play-button.png\" alt=\"\" srcset=\"\" width=\"50px\">
             </div>
         </div>
         <aside class=\"col-2\">
             <div class=\"card bg-transparent\">
                 <div class=\"card-header\">
-                    Classement
+                    Ranking
                 </div>
                 <div class=\"card-body\">
                     <table class=\"table\">
                         <thead class=\"thead\">
                             <tr>
-                                <th>Place</th>
-                                <th>Nom</th>
-                                <th>CLics</th>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>CLicks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -305,6 +316,6 @@ class __TwigTemplate_9c5e5e0acec4291d36c800524d3edf9609f53be947c11504551ff1dc76b
 {% block javascripts %}
 {{ encore_entry_script_tags('home') }}
 {% endblock %}
-", "home/index.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\home\\index.html.twig");
     }
 }

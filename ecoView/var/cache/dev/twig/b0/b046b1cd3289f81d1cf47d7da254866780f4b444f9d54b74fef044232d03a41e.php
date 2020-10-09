@@ -81,6 +81,6 @@ class __TwigTemplate_c68e62248d4f5b2723ab780f5f369edb18908d3fc2791a2e5013ef2479d
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ user.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "user/_delete_form.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\user\\_delete_form.html.twig");
+", "user/_delete_form.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\user\\_delete_form.html.twig");
     }
 }

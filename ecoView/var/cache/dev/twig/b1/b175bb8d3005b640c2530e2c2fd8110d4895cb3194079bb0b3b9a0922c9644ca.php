@@ -413,6 +413,6 @@ class __TwigTemplate_0d0ecf3104d4150cb9e7b3cc6f94edbe2e0b400f16c231cb26ab81e1894
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
     }
 }

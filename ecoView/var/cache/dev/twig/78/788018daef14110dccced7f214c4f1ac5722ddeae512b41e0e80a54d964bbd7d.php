@@ -193,6 +193,6 @@ class __TwigTemplate_d9250d1ec91b4a69de16bff2938300f6ddeebce00259f8b4b5bf5a9f4f9
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base.html.twig");
     }
 }

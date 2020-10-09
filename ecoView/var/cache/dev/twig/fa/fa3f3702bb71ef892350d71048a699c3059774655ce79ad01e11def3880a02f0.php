@@ -1704,6 +1704,6 @@ class __TwigTemplate_d90d1d35d81857ee005955a2fcf58a5086747c824c747f988952f0a1709
     });
 
 /*]]>*/</script>
-", "@WebProfiler/Profiler/base_js.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
     }
 }

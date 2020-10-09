@@ -203,6 +203,15 @@ class User implements UserInterface
         return $this;
     }
 
+    public function addAssociations(Array $associations)
+    {
+        foreach($associations as $association){
+            $this->addAssociation($association);
+        }
+
+        return $this;
+    }
+
     public function removeAssociation(Association $association): self
     {
         if ($this->associations->contains($association)) {

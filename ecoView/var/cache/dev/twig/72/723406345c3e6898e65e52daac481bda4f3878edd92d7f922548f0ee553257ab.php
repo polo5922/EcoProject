@@ -247,6 +247,6 @@ class __TwigTemplate_a97ef76b6ad9ff782482f4a8e88b21772f7ae478d0da034ac4a1c39535a
 
     <a href=\"{{ path('association_new') }}\">Create new</a>
 {% endblock %}
-", "association/index.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\association\\index.html.twig");
+", "association/index.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\association\\index.html.twig");
     }
 }

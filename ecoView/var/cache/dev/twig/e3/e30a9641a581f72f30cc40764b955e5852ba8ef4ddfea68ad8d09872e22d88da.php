@@ -140,6 +140,6 @@ class __TwigTemplate_7c21efcb266a1705a92869f561484a7b5210b61256bea27fb29efa5c058
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
-", "user/edit.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\user\\edit.html.twig");
+", "user/edit.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\user\\edit.html.twig");
     }
 }

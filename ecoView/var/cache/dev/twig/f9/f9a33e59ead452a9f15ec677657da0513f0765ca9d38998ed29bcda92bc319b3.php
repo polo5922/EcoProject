@@ -66,7 +66,7 @@ class __TwigTemplate_3c44da07b06c9922d0e7df025fa089683d8128c16fcbdc97625511f7ebf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Ajouter une association";
+        echo "Add association";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -110,7 +110,7 @@ class __TwigTemplate_3c44da07b06c9922d0e7df025fa089683d8128c16fcbdc97625511f7ebf
 
         // line 10
         echo "<form action=\"\" method=\"POST\">
-    <input type=\"submit\" value=\"Valider\" class=\"btn btn-outline-primary\">
+    <input type=\"submit\" value=\"Validate\" class=\"btn btn-outline-primary\">
     <div class=\"container-fluid row\" id=\"flex\">
         ";
         // line 13
@@ -192,7 +192,7 @@ class __TwigTemplate_3c44da07b06c9922d0e7df025fa089683d8128c16fcbdc97625511f7ebf
     {
         return new Source("{% extends \"base.html.twig\" %}
 
-{% block title \"Ajouter une association\" %}
+{% block title \"Add association\" %}
 
 {% block styles %}
     {{ encore_entry_link_tags('add_assoc') }}
@@ -200,7 +200,7 @@ class __TwigTemplate_3c44da07b06c9922d0e7df025fa089683d8128c16fcbdc97625511f7ebf
 
 {% block body %}
 <form action=\"\" method=\"POST\">
-    <input type=\"submit\" value=\"Valider\" class=\"btn btn-outline-primary\">
+    <input type=\"submit\" value=\"Validate\" class=\"btn btn-outline-primary\">
     <div class=\"container-fluid row\" id=\"flex\">
         {% set i = 0 %}
         {% for association in associations %}
@@ -225,6 +225,6 @@ class __TwigTemplate_3c44da07b06c9922d0e7df025fa089683d8128c16fcbdc97625511f7ebf
     </div>
 </form>
     
-{% endblock %}", "user/add_assoc.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\user\\add_assoc.html.twig");
+{% endblock %}", "user/add_assoc.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\user\\add_assoc.html.twig");
     }
 }

@@ -94,6 +94,6 @@ class __TwigTemplate_9a17691b46ae976a9c19e5d940b420bed193eb6343b67bab01fa324af6e
 <p>
     Cheers!
 </p>
-", "registration/confirmation_email.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\registration\\confirmation_email.html.twig");
+", "registration/confirmation_email.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\registration\\confirmation_email.html.twig");
     }
 }

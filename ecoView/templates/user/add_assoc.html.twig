@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title "Ajouter une association" %}
+{% block title "Add association" %}
 
 {% block styles %}
     {{ encore_entry_link_tags('add_assoc') }}
@@ -8,7 +8,7 @@
 
 {% block body %}
 <form action="" method="POST">
-    <input type="submit" value="Valider" class="btn btn-outline-primary">
+    <input type="submit" value="Validate" class="btn btn-outline-primary">
     <div class="container-fluid row" id="flex">
         {% set i = 0 %}
         {% for association in associations %}

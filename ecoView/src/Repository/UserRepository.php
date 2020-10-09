@@ -41,7 +41,6 @@ class UserRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('u')
         ->orderBy('u.user_clics', 'DESC')
-        ->orderBy('u.user_name', 'DESC')
         ->setMaxResults(10);
 
         $query = $qb->getQuery();

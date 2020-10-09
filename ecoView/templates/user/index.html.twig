@@ -8,25 +8,21 @@
     <table class="table">
         <thead>
             <tr>
-                <th>userId</th>
-                <th>User_name</th>
-                <th>User_password</th>
-                <th>User_email</th>
-                <th>User_ip</th>
-                <th>User_created_at</th>
-                <th>User_clics</th>
+                <th>User's name</th>
+                <th>User's email</th>
+                <th>User's ip</th>
+                <th>User created at</th>
+                <th>User nb of clics</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
                 <td>{{ user.userName }}</td>
-                <td>{{ user.userPassword }}</td>
                 <td>{{ user.userEmail }}</td>
                 <td>{{ user.userIp }}</td>
-                <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.userCreatedAt | date('Y-m-d H:i:s') }}</td>
                 <td>{{ user.userClics }}</td>
                 <td>
                     <a href="{{ path('user_show', {'id': user.id}) }}">show</a>

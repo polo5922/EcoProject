@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="img/coin.png" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('img/coin.png') }}" type="image/x-icon">
 
         <!-- insert of font awersome-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,20 +22,14 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
-                    </li>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+                <ul class="navbar-nav mr-3 mt-lg-0 ">
                     {% if app.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('user_show',{"id": app.user.id }) }}">profile</a>
+                            <a class="nav-link" href="{{ path('user_show',{"id": app.user.id }) }}">{{ app.user}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}">logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" >{{ app.user}}</a>
                         </li>
 
                     {% else %}
@@ -46,13 +40,13 @@
                             <a class="nav-link" href="{{ path('app_login') }}">login</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item dropdown">
+                    {# <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="#">Action 1</a>
                             <a class="dropdown-item" href="#">Action 2</a>
                         </div>
-                    </li>
+                    </li> #}
                 </ul>
             </div>
         </nav>

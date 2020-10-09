@@ -84,6 +84,6 @@ class __TwigTemplate_78e5ff64917043ff1ff63602f37ed1f7254e2475b042005f9495ed098ed
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "association/_form.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\association\\_form.html.twig");
+", "association/_form.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\association\\_form.html.twig");
     }
 }

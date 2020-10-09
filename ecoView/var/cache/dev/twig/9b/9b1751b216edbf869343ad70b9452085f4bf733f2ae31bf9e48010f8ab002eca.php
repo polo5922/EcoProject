@@ -1882,6 +1882,6 @@ class __TwigTemplate_5e08634a50ee4fa6167f36f27a65bfb9700272ab03f8c4f934902414eaf
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
     }
 }

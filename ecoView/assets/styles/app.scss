@@ -1,4 +1,13 @@
+
+$enable-shadows : true;
+$theme-colors: (
+  "primary": rgb(255, 200, 67),
+  "danger": #ff4136,
+  "dark":rgb(30, 56, 47)
+);
+
 @import "~bootstrap/scss/bootstrap";
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');

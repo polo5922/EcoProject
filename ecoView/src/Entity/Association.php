@@ -166,24 +166,24 @@ class Association
     /**
      * @return Collection|User[]
      */
-    public function getAssMembers(): Collection
+    public function getAssMembres(): Collection
     {
-        return $this->ass_members;
+        return $this->ass_membres;
     }
 
-    public function addAssMember(User $assMember): self
+    public function addAssMember(User $assMembre): self
     {
-        if (!$this->ass_members->contains($assMember)) {
-            $this->ass_members[] = $assMember;
+        if (!$this->ass_membres->contains($assMembre)) {
+            $this->ass_membres[] = $assMembre;
         }
 
         return $this;
     }
 
-    public function removeAssMember(User $assMember): self
+    public function removeAssMembre(User $assMembre): self
     {
-        if ($this->ass_members->contains($assMember)) {
-            $this->ass_members->removeElement($assMember);
+        if ($this->ass_membres->contains($assMembre)) {
+            $this->ass_membres->removeElement($assMembre);
         }
 
         return $this;

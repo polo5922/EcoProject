@@ -248,6 +248,6 @@ class __TwigTemplate_5fd7a9ca612fa246c79c774844ffba725a42ba9127621aa8485810cf12c
 {% endblock %}
 
 {% block javascripts %}{{ encore_entry_script_tags('login') }}{% endblock %}
-", "security/login.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\security\\login.html.twig");
     }
 }

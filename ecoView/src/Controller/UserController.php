@@ -65,11 +65,17 @@ class UserController extends AbstractController
         $associations = $assoc_repo->findAll();
         $form = $request->request;
         if (count($form) > 0){
-            foreach($form as $key=>$value){
-                echo '<pre>';
-                var_dump($key);
-                echo '</pre>';
-            }
+            foreach($form as $key=>$value)
+                $assoc[] = $key;  
+            $assocs_to_add = $assoc_repo->findByIds($assoc);
+            // dd($assocs_to_add);
+            $res = $user->addAssociations($assocs_to_add);
+            // dd($res);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->render('user/show.html.twig',compact('associations','user'));
         }
         return $this->render('user/add_assoc.html.twig',compact('associations','user'));
     }

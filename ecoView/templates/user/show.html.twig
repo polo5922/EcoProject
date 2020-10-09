@@ -1,59 +1,81 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}{{user}}{% endblock %}
+
+{% block styles %}
+    {{ encore_entry_link_tags('add_assoc') }}
+{% endblock %}
 
 {% block body %}
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profil</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="associations-tab" data-toggle="tab" href="#associations" role="tab" aria-controls="associations" aria-selected="false">Associations</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <table class="table">
-            <tbody>
-                <tr>
-                    <th>User_name</th>
-                    <td>{{ user.userName }}</td>
-                </tr>
-                <tr>
-                    <th>User_password</th>
-                    <td>{{ user.userPassword }}</td>
-                </tr>
-                <tr>
-                    <th>User_email</th>
-                    <td>{{ user.userEmail }}</td>
-                </tr>
-                <tr>
-                    <th>User_ip</th>
-                    <td>{{ user.userIp }}</td>
-                </tr>
-                <tr>
-                    <th>User_created_at</th>
-                    <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                </tr>
-                <tr>
-                    <th>User_clics</th>
-                    <td>{{ user.userClics }}</td>
-                </tr>
-            </tbody>
-        </table>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="associations-tab" data-toggle="tab" href="#associations" role="tab" aria-controls="associations" aria-selected="false">Associations</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+  {#  onglet Profile #}
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <table class="table w-50">
+              <tbody>
+                  <tr>
+                      <th>Name :</th>
+                      <td>{{ user.userName }}</td>
+                  </tr>
+                  <tr>
+                      <th>Email : </th>
+                      <td>{{ user.userEmail }}</td>
+                  </tr>
+                  <tr>
+                      <th>Created at :</th>
+                      <td>{{ user.userCreatedAt ? user.userCreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                  </tr>
+                  <tr>
+                      <th>Videos watched :</th>
+                      <td>{{ user.userClics }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      {# onglet associations #}
+    <div class="tab-pane fade container" id="associations" role="tabpanel" aria-labelledby="associations-tab">
+      <a class="btn btn-outline-primary" href="{{ path('user_add_assoc') }}">Add</a>
+      {% if user.associationsGerees %}
+      <div class="d-flex flex-row justify-content-between">
+        {% for association in user.associationsGerees %}
+          <div class="media bg-dark p-3 m-3 rounded">
+            <a class="d-flex" href="#">
+              <img src="{{ asset( 'img/logo/' ~ association.assLogo ) }}"  class="ass_logo" alt="">
+            </a>
+            <div class="media-body">
+              <h5>{{association.assNom}}</h5>
+              <p>{{association.assDescription}}</p>
+              <a href="{{ path('association_edit', {"id": association.id}) }}" class="btn btn-outline-warning">Edit</a>
+              <a href="{{ path('association_delete', {"id": association.id}) }}" class="btn btn-outline-danger" onclick="return confirm('Cette action est définitive, êtes vous sûr de vouloir supprimer cette association du site?');">Delete</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="d-flex flex-row justify-content-between">
+        {% for association in user.associations %}
+          <div class="media bg-dark p-3 m-3">
+            <a class="d-flex" href="#">
+              <img src="{{ asset( 'img/logo/' ~ association.assLogo ) }}"  class="ass_logo" alt="">
+            </a>
+            <div class="media-body">
+              <h5>{{association.assNom}}</h5>
+              {{association.assDescription}}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
-  <div class="tab-pane fade" id="associations" role="tabpanel" aria-labelledby="associations-tab">
-    {% for association in user.associations %}
-      {{accossiation.AssNom}}
-    {% endfor %}
-    <a class="btn btn-outline-primary" href="{{ path('user_add_assoc') }}">ajouter</a>
   </div>
 </div>
-    <h1>User</h1>
 
-    <a href="{{ path('user_index') }}">back to list</a>
-
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+    <a href="{{ path('user_edit', {'id': user.id}) }}">Edit</a>
 {% endblock %}

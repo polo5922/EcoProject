@@ -19,6 +19,17 @@ class AssociationRepository extends ServiceEntityRepository
         parent::__construct($registry, Association::class);
     }
 
+    public function findByIds(Array $ids)
+    {
+        $qb = $this->createQueryBuilder('a')
+        ->where('a.id IN(:ids)')
+        ->setParameter('ids', array_values($ids));
+
+        $query = $qb->getQuery();
+        $associations =  $query->execute();
+        return $associations;
+    }
+
     // /**
     //  * @return Association[] Returns an array of Association objects
     //  */

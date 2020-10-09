@@ -50,7 +50,10 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
     <head>
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <link rel=\"shortcut icon\" href=\"img/coin.png\" type=\"image/x-icon\">
+        <link rel=\"shortcut icon\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/coin.png"), "html", null, true);
+        echo "\" type=\"image/x-icon\">
 
         <!-- insert of font awersome-->
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
@@ -86,72 +89,57 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
                 aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
-            <div class=\"collapse navbar-collapse\" id=\"collapsibleNavId\">
-                <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"";
-        // line 28
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Accueil <span class=\"sr-only\">(current)</span></a>
-                    </li>
+            <div class=\"collapse navbar-collapse justify-content-end\" id=\"collapsibleNavId\">
+                <ul class=\"navbar-nav mr-3 mt-lg-0 \">
                     ";
-        // line 30
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30)) {
-            // line 31
+        // line 27
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27)) {
+            // line 28
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "user", [], "any", false, false, false, 32), "id", [], "any", false, false, false, 32)]), "html", null, true);
-            echo "\">profile</a>
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "html", null, true);
+            echo "</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 35
+            // line 32
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">logout</a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" >";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38), "html", null, true);
-            echo "</a>
                         </li>
 
                     ";
         } else {
-            // line 42
+            // line 36
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 43
+            // line 37
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">register</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 46
+            // line 40
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">login</a>
                         </li>
                     ";
         }
-        // line 49
-        echo "                    <li class=\"nav-item dropdown\">
-                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"dropdownId\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
-                        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownId\">
-                            <a class=\"dropdown-item\" href=\"#\">Action 1</a>
-                            <a class=\"dropdown-item\" href=\"#\">Action 2</a>
-                        </div>
-                    </li>
-                </ul>
+        // line 43
+        echo "                    ";
+        // line 50
+        echo "                </ul>
             </div>
         </nav>
         ";
-        // line 59
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 54
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 61
+        // line 55
         echo "        ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -202,7 +190,7 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
 
     }
 
-    // line 59
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,7 +208,7 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
 
     }
 
-    // line 60
+    // line 54
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -250,7 +238,7 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
 
     public function getDebugInfo()
     {
-        return array (  224 => 60,  206 => 59,  188 => 14,  170 => 13,  155 => 61,  152 => 60,  150 => 59,  138 => 49,  132 => 46,  126 => 43,  123 => 42,  116 => 38,  110 => 35,  104 => 32,  101 => 31,  99 => 30,  94 => 28,  83 => 20,  79 => 19,  73 => 15,  71 => 14,  67 => 13,  63 => 12,  59 => 11,  47 => 1,);
+        return array (  212 => 54,  194 => 53,  176 => 14,  158 => 13,  143 => 55,  140 => 54,  138 => 53,  133 => 50,  131 => 43,  125 => 40,  119 => 37,  116 => 36,  109 => 32,  101 => 29,  98 => 28,  96 => 27,  86 => 20,  82 => 19,  76 => 15,  74 => 14,  70 => 13,  66 => 12,  62 => 11,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -261,7 +249,7 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
     <head>
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <link rel=\"shortcut icon\" href=\"img/coin.png\" type=\"image/x-icon\">
+        <link rel=\"shortcut icon\" href=\"{{ asset('img/coin.png') }}\" type=\"image/x-icon\">
 
         <!-- insert of font awersome-->
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
@@ -279,20 +267,14 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
                 aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
-            <div class=\"collapse navbar-collapse\" id=\"collapsibleNavId\">
-                <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
-                    <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"{{ path('home') }}\">Accueil <span class=\"sr-only\">(current)</span></a>
-                    </li>
+            <div class=\"collapse navbar-collapse justify-content-end\" id=\"collapsibleNavId\">
+                <ul class=\"navbar-nav mr-3 mt-lg-0 \">
                     {% if app.user %}
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('user_show',{\"id\": app.user.id }) }}\">profile</a>
+                            <a class=\"nav-link\" href=\"{{ path('user_show',{\"id\": app.user.id }) }}\">{{ app.user}}</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">logout</a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" >{{ app.user}}</a>
                         </li>
 
                     {% else %}
@@ -303,13 +285,13 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
                             <a class=\"nav-link\" href=\"{{ path('app_login') }}\">login</a>
                         </li>
                     {% endif %}
-                    <li class=\"nav-item dropdown\">
+                    {# <li class=\"nav-item dropdown\">
                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"dropdownId\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
                         <div class=\"dropdown-menu\" aria-labelledby=\"dropdownId\">
                             <a class=\"dropdown-item\" href=\"#\">Action 1</a>
                             <a class=\"dropdown-item\" href=\"#\">Action 2</a>
                         </div>
-                    </li>
+                    </li> #}
                 </ul>
             </div>
         </nav>
@@ -318,6 +300,6 @@ class __TwigTemplate_5eb3768ed00b2bf08fde6bf3713f46915d1c8a2147d19cbd2fddd1062ab
         {{ encore_entry_script_tags('app') }}
     </body>
 </html>
-", "base.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\base.html.twig");
     }
 }

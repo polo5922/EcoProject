@@ -219,6 +219,6 @@ class __TwigTemplate_2a92e5c79c88636e16236a321acd2ecb45dbda750dda60ab138e965180c
     {{ form_end(registrationForm) }} </form>
 {% endblock %}
 
-{% block javascripts %}{{ encore_entry_script_tags('register') }}{% endblock %}", "registration/register.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\registration\\register.html.twig");
+{% block javascripts %}{{ encore_entry_script_tags('register') }}{% endblock %}", "registration/register.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\registration\\register.html.twig");
     }
 }

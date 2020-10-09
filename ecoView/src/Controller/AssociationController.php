@@ -89,15 +89,34 @@ class AssociationController extends AbstractController
     /**
      * @Route("/{id}/edit", name="association_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Association $association): Response
+    public function edit(Request $request, Association $association, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(AssociationType::class, $association);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // dd($form);
+            $logoFile = $form->get('logo')->getData();
+            if ($logoFile) {
+                $originalFilename = pathinfo($logoFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$logoFile->guessExtension();
+                $association->setAssLogo($newFilename);
+
+                try {
+                    $logoFile->move(
+                        $this->getParameter('logo_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    throw new Exception('erreur de déplacement du logo : '.$e->getMessage());
+                }
+
+            }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('association_index');
+            return $this->redirectToRoute('user_show', ['id'=>$this->getUser()->getId()]);
         }
 
         return $this->render('association/edit.html.twig', [

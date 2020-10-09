@@ -133,6 +133,6 @@ class __TwigTemplate_1fc3cd5cf01868776a91de8757b1b12cc45338b98baff9ab8bc8d6f6e04
 
     <a href=\"{{ path('association_index') }}\">back to list</a>
 {% endblock %}
-", "association/new.html.twig", "D:\\wamp64\\www\\EcoProject\\ecoView\\templates\\association\\new.html.twig");
+", "association/new.html.twig", "C:\\Users\\joce\\Documents\\OpenCampus\\EcoProject\\ecoView\\templates\\association\\new.html.twig");
     }
 }
